@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import HomePages from "./pages/HomePages";
+import MainLayout from "./layouts/MainLayout";
+import Layout from "./components/Layout";
+import RequireAuth from "./features/auth/RequireAuth";
+import Login from "./features/auth/Login";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      {/* public routes */}
+      <Route element={<Layout />}>
+        <Route index path="*" element={<MainLayout />} />
+        <Route path="/login" element={<Login />} />
+      </Route>
+      {/* protected routes */}
+      <Route element={<RequireAuth />}>
+        <Route path="/termgame/*"></Route>
+      </Route>
+    </Routes>
   );
 }
 

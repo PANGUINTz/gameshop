@@ -1,13 +1,153 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --backgroud-main: #6f61c0;
+  --backgroud-footer: #524792;
+  --box-main: #a084e8;
+  --alarm: #8be8e5;
+  --alarm-fade: #8ec9c7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--backgroud-main);
+  font-family: "Kanit", sans-serif;
+}
+
+input {
+  border: black 2px solid;
+  border-radius: 10px;
+}
+
+.background-navbar {
+  background-color: var(--box-main);
+  font-family: "Itim", cursive;
+}
+
+.background-menu {
+  width: fit-content;
+  color: white;
+}
+
+.background-menu h2 {
+  border-left: var(--alarm) 4px solid;
+  background: linear-gradient(90deg, var(--alarm-fade), var(--backgroud-main));
+}
+
+.background-menu p {
+  color: lightgray;
+}
+
+.background-footer {
+  background-color: var(--backgroud-footer);
+}
+
+.background-card {
+  background-color: var(--backgroud-footer);
+}
+
+.hover-text {
+  color: lightgray;
+  transition: 0.3s;
+}
+
+.hover-text:hover {
+  color: var(--alarm);
+  transition: ease-in-out 0.4s;
+}
+
+.border-customize {
+  border: 1px solid var(--alarm);
+  color: white;
+  transition: 0.5s;
+}
+
+.border-customize:hover {
+  cursor: pointer;
+  background-color: var(--alarm);
+  transition: top 0.3s;
+}
+
+.box-message {
+  background-color: var(--box-main);
+  border-radius: 10px;
+  color: white;
+}
+
+.banner {
+  width: 100%;
+  height: 30vw;
+}
+
+.image-logo {
+  width: 200x;
+  height: 200px;
+}
+
+.discount {
+  opacity: 0.75;
+}
+.discount p {
+  opacity: 1 !important;
+}
+
+.active {
+  position: fixed !important;
+  width: 100%;
+  z-index: 20;
+  animation: UpToDown 0.5s both;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: white;
+  padding: 25px;
+  border-radius: 100px;
+  transition: linear 30ms;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 20px !important;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  padding: 30px;
+  transition: linear 30ms;
+}
+
+.hamburger-react {
+  color: white;
+  font-weight: bold;
+}
+
+.ant-collapse-arrow {
+  color: white !important;
+}
+
+.ant-collapse-header-text {
+  color: white;
+}
+
+.ant-collapse-content-box {
+  background-color: #524792;
+  color: white;
+}
+
+@keyframes UpToDown {
+  0% {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  100% {
+    transform: translateZ(0);
+  }
 }
